@@ -43,6 +43,15 @@
 	border-style: solid;
 }
 
+#piclocation{
+	position: rekative;
+}
+
+#caption {
+	position: absolute;
+	top: 0;
+}
+
 #footer {
 	width: 1000px;
 	height: 60px;
