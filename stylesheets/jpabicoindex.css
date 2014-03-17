@@ -1,5 +1,5 @@
 body {
-	background-image: url('../images/stars.jpg');
+	background-image: url('../images/lake.jpg');
 	color: red;
 	font-size: 87.5%;
 	font-family: Arial;
@@ -144,13 +144,47 @@ a:hover, a:active {
 	color: white;
 }
 
-@media only screen and (min-width: 150 px) and (max-width: 600px) {
+@media only screen and (min-width: 150px) and (max-width: 500px) {
 	.body {
-		width: 90%
+		width: 90%;
 		font-size: 95%;
 	}
 
 	.mainHeader img {
 		width: 100%;
+	}
+
+	.mainHeader nav {
+		height: 160px;
+	}
+
+	.mainHeader nav ul {
+		padding-left: 0;
+	}
+
+	.mainHeader nav ul li {
+		width: 100%;
+		text-align: center;
+	}
+
+	.mainHeader nav a:link, .mainHeader nav a:visited {
+		padding: 10px 25px;
+		height: 20px;
+		display: block;
+	}
+
+	.content {
+		width: 100%;
+		margin-top: 2%;
+	}
+
+	.postInfo {
+		display: none;
+	}
+
+	.topSidebar, .middleSidebar, .bottomSidebar {
+		width: 94%;
+		margin: 2% 0 0 0;
+		padding: 2% 3%;
 	}
 }
