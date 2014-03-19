@@ -1,6 +1,6 @@
 body {
 	background-image: url('../images/lake.jpg');
-	color: red;
+	color: black;
 	font-size: 87.5%;
 	font-family: Arial;
 	line-height: 1.5;
@@ -12,7 +12,7 @@ a {
 }
 
 a:link, a:visited {
-	color: orange;	
+	color: darkgoldenrod;	
 }
 
 a:hover, a:active {
@@ -28,14 +28,14 @@ a:hover, a:active {
 }
 
 .mainHeader img {
-	width: 30%;
+	width: 20%;
 	height: auto;
 	margin: 2% 0;
 
 }
 
 .mainHeader nav {
-	background-color: grey;
+	background-color: silver;
 	height: 40px;
 	border-radius: 5px;
 }
@@ -51,7 +51,7 @@ a:hover, a:active {
 }
 
 .mainHeader nav a:link, .mainHeader nav a:visited {
-	color: purple;
+	color: dimgrey;
 	display: inline-block;
 	padding: 10px 25px;
 	height: 20px;
@@ -77,8 +77,16 @@ a:hover, a:active {
 	float: left;
 }
 
+.topContent img {
+	width: 40%;
+	height: auto;
+	margin: 2% 0;
+	float: right;
+
+}
+
 .topContent {
-	background-color: white;
+	background-color: antiquewhite;
 	border-radius: 5px;
 	padding: 3% 5%;
 	margin-top: 2%;
@@ -94,12 +102,22 @@ a:hover, a:active {
 .topSidebar {
 	width: 21%;
 	float: left;
-	background-color: white;
+	background-color: antiquewhite;
 	border-radius: 5px;
 	margin-left: 3%;
 	margin-bottom: 2%;
 	margin-top: 1.5%;
 	padding: 2% 3%;
+}
+
+.topSide {
+	max-height: 100%;
+	max-width: 100%;
+}
+
+.topSide img {
+	max-width: 90%;
+	max-height: 90%;
 }
 
 .postInfo {
@@ -111,7 +129,7 @@ a:hover, a:active {
 .middleSidebar {
 	width: 21%;
 	float: left;
-	background-color: white;
+	background-color: antiquewhite;
 	border-radius: 5px;
 	margin-left: 3%;
 	margin-bottom: 2%;
@@ -121,7 +139,7 @@ a:hover, a:active {
 .bottomSidebar {
 	width: 21%;
 	float: left;
-	background-color: white;
+	background-color: antiquewhite;
 	border-radius: 5px;
 	margin-left: 3%;
 	margin-bottom: 2%;
@@ -133,7 +151,7 @@ a:hover, a:active {
 	height: 40px;
 	float: left;
 	border-radius: 5px;
-	background-color: grey;
+	background-color: silver;
 	margin-top: 2%;
 	margin-bottom: 2%;
 }
@@ -141,7 +159,7 @@ a:hover, a:active {
 .mainFooter p {
 	width: 92%;
 	margin: 10px auto;
-	color: white;
+	color: dimgrey;
 }
 
 @media only screen and (min-width: 150px) and (max-width: 600px) {
