@@ -5,6 +5,16 @@ body {
 	font-family: Arial;
 	line-height: 1.5;
 	text-align: left;
+	
+}
+
+a.smooth {
+	transition-property: background-color;
+	transition-duration: 0.3s;
+}
+
+a.smooth:hover, a.smooth:focus {
+	background-image: url('../images.stars.jpg');
 }
 
 a {
