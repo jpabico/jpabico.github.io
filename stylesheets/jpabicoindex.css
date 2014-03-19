@@ -1,5 +1,5 @@
 body {
-	background-image: url('../images/stars.jpg');
+	background-image: url('../images/lake.jpg');
 	color: saddlebrown;
 	font-size: 87.5%;
 	font-family: Arial;
@@ -28,7 +28,7 @@ a:hover, a:active {
 }
 
 .mainHeader img {
-	width: 20%;
+	width: 10%;
 	height: auto;
 	margin: 2% 0;
 
