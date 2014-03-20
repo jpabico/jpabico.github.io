@@ -87,7 +87,7 @@ a:hover, a:active {
 	width: 50%;
 	height: auto;
 	margin: 2% 2%;
-	float: right;
+	clear: both;
 
 }
 

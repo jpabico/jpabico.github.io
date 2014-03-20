@@ -1,0 +1,19 @@
+Oftem called "the language of the web", Javascript is....  
+It would be difficult 
+to be a web developer without knowing at least the basics of 
+Javascript.  Though it's a matter of preference, many people 
+find that it is easier to learn than
+some other programming languages like C or Assembly (a 
+machine language).  Javascript also has libraries filled with
+lots of properties and methods that can be used to interact with
+HTML and CSS (the "content" and "presentation" layers of a website").
+Many of these libraries account for how different browsers render JS 
+code and makes it easier for developers to write programs that will 
+work on many browsers.
+These libraries can help websites be more interactive with users.
+Javascript  is flexible in that it can be used on both the client-side 
+and server side (explain lient vs server)
+And last, but certainly not least, Javascript so far seems to be fun 
+(move sentence about interacting with users here - replace with faster 
+processing because of async)
+ 
