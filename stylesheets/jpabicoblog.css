@@ -1,5 +1,31 @@
+body:hover, body:focus {
+  background-image: url('../images/lake.jpg');
+  transition: background-image 2s ease-in-out;
 }
 
+body {
+	background-image: url('../images/stars.jpg');
+	color: saddlebrown;
+	font-size: 87.5%;
+	font-family: Arial;
+	line-height: 1.5;
+	text-align: left;
+	transition-property: background-image;
+	transition: background-image 2s ease-in-out;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:link, a:visited {
+	color: dodgerblue;	
+}
+
+a:hover, a:active {
+	color: white;
+	background-color: orange;
+}
 
 .body {
 	margin: 0 auto;
