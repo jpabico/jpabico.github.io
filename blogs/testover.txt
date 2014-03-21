@@ -1,1 +1,4 @@
-Happy!
+Apparently, Javascript is quite versatile.  
+This paragraph was typed in a .txt file and 
+loaded into this HTML document using jQuery.
+I can see why Javascript is so popular!

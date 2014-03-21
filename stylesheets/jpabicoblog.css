@@ -83,12 +83,11 @@ a:hover, a:active {
 	float: left;
 }
 
-.topContent img {
-	width: 50%;
+.intro img {
+	display:block;
+	width: 35%;
 	height: auto;
-	margin: 2% 2%;
-	clear: both;
-
+	margin: 2% auto;
 }
 
 .topContent h2 {
