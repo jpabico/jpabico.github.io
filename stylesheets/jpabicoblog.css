@@ -139,6 +139,10 @@ a:hover, a:active {
 	padding: 2% 3%;
 }
 
+.bottomSidebar ul {
+	list-style-type: none;
+}
+
 .mainFooter {
 	width: 100%;
 	height: 40px;
