@@ -102,6 +102,11 @@ a:hover, a:active {
 	margin-top: 2%;
 }
 
+.topicnames ul {
+	text-decoration: underline;
+	font-style: italic;
+}
+
 .topSidebar {
 	width: 21%;
 	float: left;
