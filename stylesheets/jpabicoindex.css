@@ -19,12 +19,12 @@ a {
 }
 
 a:link, a:visited {
-	color: dodgerblue;	
+	color: royalblue;	
 }
 
 a:hover, a:active {
-	color: white;
-	background-color: orange;
+	color: antiquewhite;
+	background-color: saddlebrown;
 }
 
 .body {
@@ -102,9 +102,11 @@ a:hover, a:active {
 	margin-top: 2%;
 }
 
-.topicnames ul {
+.topicnames {
 	text-decoration: underline;
 	font-style: italic;
+	font-weight: bold;
+	font-size: 16px;
 }
 
 .topSidebar {
@@ -131,7 +133,7 @@ a:hover, a:active {
 
 .postInfo {
 	font-style: italic;
-	color: dodgerblue;
+	color: royalblue;
 	font-size: 90%;
 }
 
