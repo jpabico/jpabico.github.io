@@ -7,6 +7,15 @@
    <link rel="stylesheet" type="text/css" href="../stylesheets/jpabicoblog.css"/>
    <script src="../scripts/jquery-1.11.0.js"></script>
    <script src="../scripts/textgrab.js"></script>
+
+   <!-- --------Specific to this page only--------- -->
+   <style>  
+      li {
+         text-align: justify;
+         margin: 0 5%;
+      }
+   </style>
+   <!-- --------Specific to this page only--------- -->
 </head>
 
 <body class="body">
@@ -37,13 +46,19 @@
 
             <content class="intro">
                <img src="../images/fruitloops.jpg">
-               <p>When I think about the times in my life when I've been happiest, several of the words on the list struck a chord.  Among the loudest: adventure, challenge, confidence, friendships, growth, and romance (easy ladies, I'm married).
+               <p>
+                  Looping is a technique commonly found in programming languages.  It involves repeating a set of commands until the loop is "told" to stop.  There are a variety of ways in Ruby to "tell" a loop to stop repeating.  Though there are specific parameters and special cases to the following commands/methods, the following are guidelines as to when to use a particular type of loop.
+               <ul>
+                  <li><b>"for...in..."</b> loops can be used to repeat a block of code if you know how many repetitions you want ahead of time</li>
+                  <li><b>".times"</b> is similar to "for..in.." in that you need to specify the number of repetitions ahead of time</li>
+                  <li><b>"while"</b> can be used to perform an unspecified number of loops as long as a condition is true (for example, as long as i > 5 is TRUE, keep repeating)</li>
+                  <li><b>"until"</b> is the opposite of "while".  Perform an unspecified number of loops as long as a condition is false (for example, as long as i > 5 is FALSE, keep repeating)</li>
+                  <li><b>".each"</b> will repeat a block of code for each element in an array and will return the ORIGINAL array at the end</li>
+                  <li><b>".map"</b> will do what ".each" does and will return a NEW array at the end</li>
+               </ul>
                </p>
-               <p>Of those, <b><em>confidence</em></b> is the most important.  Without it, many of the other values wouldn't have followed for me.  Sometimes, you know you're not the smartest, the bravest, or the most skilled.  But what you may lack in one area, confidence picks up the slack.  It's confidence that allows us to take risks, to take the first steps in overcoming our fears, and to bring us closer to others when we feel alone.
-               </p>
-               <p>On a scale from 1 (sucks) to 5 (awesome), I would give myself a 4 in how I try to live up to the values above.  It might sound cliche, but I strive to be the best person I can be.  But I also know that there is always room for improvement.
-               </p>
-               <p>As a teacher, I have many students this time of year excited by their college acceptance letters and uncertain in what the future may hold.  A lot of students come up to me and ask about choosing a major in college.  Though the answer I give to any one particular student is specific, the one common thread of advice I give them - "Live life with no regret."  That usually gives them a pretty good idea.
+               <p>
+                  It is good practice to check the <a href="http://www.ruby-doc.org/" target="_blank">documentation</a> for the Ruby programming language to understand the specific details of each of the methods above.
                </p>
             </content>
          </article>
