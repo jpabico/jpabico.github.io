@@ -38,13 +38,56 @@
             <content class="intro">
                <img src="../images/grouping.jpg">
                <p>
-                  ghghghghdfg dfg dfg dfg dg dg dfg dg dfg dfg dfg Bacon ipsum dolor sit amet pork loin tongue bresaola cow biltong. Venison hamburger shank short loin swine. Jowl tri-tip chicken sausage short loin, ribeye pancetta corned beef filet mignon doner turkey shoulder hamburger. Kevin short ribs t-bone sirloin bacon jowl spare ribs pork. Doner andouille sausage brisket. Pork chop brisket ground round tongue andouille. Tenderloin sausage landjaeger cow flank brisket.
+                  The Ruby group_by method is a useful method for separating 
+                  data into groups based on the results of passing that data 
+                  into a block of code.  It is applied to an enumerable.  
+                  The result is a hash where the keys are the evaluated 
+                  result from the block and the values are arrays of elements 
+                  in the collection that correspond to the key.  Its general 
+                  for is: 
+                  <blockquote>
+                     Enumerable.group_by { |object| block of code} -> 
+                     returns a hash
+                  </blockquote>
 
-Pig corned beef venison, porchetta pork belly shoulder chuck. Venison doner short ribs pancetta short loin spare ribs beef ribs jerky pork chop ground round t-bone. Tongue chicken ham hock hamburger chuck rump pig pork belly pork short loin. Andouille kevin corned beef, strip steak ground round meatball fatback hamburger chicken cow pork loin bresaola tongue capicola. Shank leberkas kielbasa pork brisket. Capicola strip steak jowl meatball rump, shank tenderloin. Pork belly tongue pork loin, tri-tip boudin corned beef fatback turducken ham hock beef shoulder t-bone bresaola ham.
+                  Here are some examples of how #group_by is used.  There 
+                  are many more ways to apply the group_by method than listed 
+                  below.  Try experimenting yourself!
 
-Shoulder filet mignon t-bone meatloaf, porchetta fatback venison tri-tip short ribs shank. Fatback beef ball tip strip steak ribeye spare ribs, leberkas tri-tip shoulder andouille bacon swine doner. Turducken ribeye kevin flank bacon tri-tip tongue landjaeger turkey venison ball tip strip steak. Ham hock sausage strip steak porchetta. Tail shankle ribeye, beef strip steak ham pastrami.
-                  <iframe src="group_by_method_examples.txt" align="bottom">
-                  </iframe>
+                  <ul>
+                     <li> Example 1 - an array of numbers is separated into 
+                        two groups: even (.even? == true) and odd 
+                        (.even == false)
+                        <blockquote>
+                           [3, 6, 7, 21, 34, 8, 0, 5].group_by {|x| x.even?}
+                           <br/>
+                           &nbsp&nbsp&nbsp&nbsp#=> {false=>[3, 7, 21, 5], 
+                           true=>[6, 34, 8, 0]}
+                        </blockquote>
+                     </li>
+                     <li> Example 2 - each number in a range of numbers 
+                        is separated according to the remaineder when 
+                        divided by 4
+                        <blockquote>
+                           (1..10).group_by { |i| i%4 }
+                           <br/>
+                           &nbsp&nbsp&nbsp&nbsp#=> {0=>[4, 8], 1=>[1, 5, 9], 
+                           2=>[2, 6, 10], 3=>[3, 7]}
+                        </blockquote>
+                     </li>
+                     <li> Example 3 - the strings in the array are ordered 
+                        by first letter
+                        <blockquote>
+                           fruits = ["apples", "grapes", "apricots", 
+                           "mangoes", "bananas"]
+                           group_by_first_letter = fruits.group_by { |x| x[0] }
+                           <br/>
+                           &nbsp&nbsp&nbsp&nbsp#=> {"a"=>["apples", 
+                           "apricots"], "g"=>["grapes"], "m"=>["mangoes"], 
+                           "b"=>["bananas"]}
+                        </blockquote>
+                     </li>
+                  </ul>
                </p>
             </content>
          </article>
