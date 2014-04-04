@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Jon's Website - Blogs</title>
+   <meta charset="utf-8">
+   <link rel="stylesheet" type="text/css" href="../stylesheets/jpabicoblog.css"/>
+   <script src="../scripts/jquery-1.11.0.js"></script>
+   <script src="../scripts/textgrab.js"></script>
+</head>
+
+<body class="body">
+
+   <header class="mainHeader">
+      <img src="../images/pabicodelogo.jpg">
+      <nav>
+         <ul>
+            <li><a class="active" href="../index.html">Home</a></li>
+            <li><a href="blog_latest.html">Blogs</a></li>
+            <li><a href="../homepagelinks.html">Links</a></li>
+            <li><a href="#">Contact</a></li>
+         </ul>
+      </nav>
+   </header>
+
+   <div class="mainContent">
+      <div class="content">
+
+         <article class="topContent">
+            <header>
+               <h2>Pairing is Paring</h2>
+            </header>
+
+            <footer>
+               <p class="postInfo"><b>March 28, 2014</b></p>
+            </footer>
+
+            <content class="intro">
+               <img src="../images/pears.jpg">
+               <p>Back when I was in elementary school, many of my teachers made us pair up for all sorts of activities.  It was great for some things (like science experiments and art) but horrible for others (I can't think of things to write or calculate numbers when other people won't shut up!).  The most important factor in determining whether or not the pairing was going to work was the person you were paired with.  Is it your best friend? The cute girl in the class?  The one with the most cooties?  
+               </p>
+               <p>Fast forward to college, and we'd occassionally get put into groups of 2 or 3 to work on long-term projects.  I hated it whenever a "bio major" ended up in my group because they couldn't "do math" (don't send all the hate mail at once, people).  But I loved it whenever an "industrial engineering major" got put in my group because they loved organization, efficiency, communication and leadership.  (in short, this project was going to get done and done well).
+               </p>
+               <p>Move into the future one more time.  My 8th year of teaching.  We do this EVERY year before the school year starts, when the teachers over new policy, set up their classrooms and curricula and, you named it, went through a series of team building exercises.  I'm going to teach in the same classroom as these people.  Must I do this again?
+               </p>
+               <p>Looking back at it all, there are times when I loved the activity and hated the activity.  And, yes, much of the time, my attitude really depended on who was in my group.  That's the surface.  People looking at my group from the outside-in would see a happy gang or a miserable crew.  But peel away the superficial appearance of things, and inside is somethings less arguable and more consistent.  People benefit from working from one another.  We have something both to learn and to teach.  Hate working with someone?  Learn to be patient and understanding.  Partner can't solve the puzzle?  Teach them a trick or two.
+               </p>
+               <p>We are sometimes so absorbed with ourselves that often we fail to see the bigger picture of how we're developing as individuals.  It isn't about gettin a good grade on a project.  It's about learning to finish what you started.  It's not about who knows and who doesn't.  It's about what a group can do with what they know.
+               </p>
+               <p>We sometimes fear working with others because we expose a vulnerable part of ourselves.  The part that isn't sure, that seems less confident, and often sounds "stupid".  But these are the times when we learn the most about who we truly are.  Learning to face the truth and attack our weaknesses head on.  We protect ourselves with so many layers of BS that only with the help of others can you actually learn about what you really are capable of.
+               </p>
+               <p>But it takes an equally willing partner or group member to confront you face to face and not be afraid to "hurt your feelings" or "make you look bad".  Criticism comes from people's mouths because at some level, they care about the outcome.  And whether we like the way they said it is irrelevant to the bigger issue at hand.  Is it for the better?  Can we change for the better?
+               </p>
+               <p>Working with others helps us develop the skills needed to become more aware of who we are and to help others do the same.  Sometimes cutting the fat hurts and we bleed.  But wounds heal and leave something stronger than the original.
+               </p>
+            </content>
+         </article>
+      </div>
+   </div>
+
+   <aside class="topSidebar">
+      <div class="topSide"><img src="../images/ice.jpg"></div>
+      <article>
+         <p>
+            "The only true wisdom is in knowing you know nothing."
+            <br>
+            <div align="right">
+            Socrates
+            </div>
+         </p>
+      </article>
+   </aside>
+
+   <aside class="bottomSidebar">
+      <article>
+         <h2>Blogs Archive</h2>
+         <p><a href = "blog_latest.html">Read my other blogs</a></p>
+      </article>
+   </aside>
+
+   <footer class="mainFooter">
+      <p>&copy; Copyright 2014 Jon Pabico<a href=""></a></p>
+   </footer>
+
+</body>
+</html>
