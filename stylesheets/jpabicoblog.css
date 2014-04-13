@@ -101,6 +101,18 @@ a:hover, a:active {
 	margin-top: 2%;
 }
 
+pre {
+	display: block;
+	margin: 2em 0;
+	white-space: pre;
+	overflow: auto;
+	width: 90%;
+	line-height: 1.4;
+	border: 1px solid #ccc;
+	background: white;
+	padding: 3%;
+}
+
 .topSidebar {
 	width: 21%;
 	float: left;

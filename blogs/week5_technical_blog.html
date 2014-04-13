@@ -38,8 +38,121 @@
             <content class="intro">
                <img src="../images/classes_n_objects.jpg"> 
                <p>
-                  Write blog here
+                  I'll show you how to define Ruby classes and objects 
+                  by using a simple example:
+                  <pre><code>
+Class Circle
+
+      def initialize(radius, interior_color)
+         @radius = radius
+         @interior_color = interior_color
+      end
+
+      def radius   
+         return @radius
+      end
+
+      def circumference   
+         diameter = 2 * @radius
+         circumference = 3.14 * diameter
+      end
+
+      def color   
+         return @interior_color
+      end
+
+end
+                  </code></pre>
+                  The class "Circle" defines the properties and methods 
+                  of a circle in general.  In this example, a circle has 
+                  2 properties (a radius and an interior color) represented 
+                  by 2 instance variables (@radius and @inerior_color 
+                  respectively).
                </p>
+               <pre><code>
+# this defines 2 instance variables 
+# (@radius and @interior_color)
+
+      def initialize(radius, interior_color)
+         @radius = radius
+         @interior_color = interior_color
+      end
+               </pre></code>
+               <p>
+                  The class uses those 2 instance variables to define 
+                  instance properties.  There are 3 instance properties
+                  defined in this example.  The class uses the "radius" 
+                  and "color" methods respectively to return the radius 
+                  and interior color of a circle.  The class also has a 
+                  "circumference" method with which it uses @radius 
+                  (our instance variable representing the radius property) 
+                  to calculate and return the circumference of a circle.
+               </p>
+               <pre><code>
+# this defines an instance method called radius
+
+      def radius   
+         return @radius
+      end
+
+# this defines an instance method called circumference
+
+      def circumference   
+         diameter = 2 * @radius
+         circumference = 3.14 * diameter
+      end
+
+# this defines an instance method called interior
+
+      def color   
+         return @interior_color
+      end
+               </pre></code>
+               <p>
+                  We can define a specific circle by using the "Circle" 
+                  class.  Creating a specific item using a class is called
+                  "instantiating an object" (or creating an object).  I
+                  can create a specific circle (a circle object) with a
+                  radius of 3 and a color of blue by using the following code:
+               </p>
+               <pre><code>
+my_circle = Circle.new(3, "blue")   
+               </pre></code>
+               <p>
+                  A specific circle object named "my_circle" is created.
+                  The "Circle" class will take the arguments we provided 
+                  (3 and "blue") and use them to initialize instance 
+                  variables instance with those values (@radius = 3, 
+                  @interior_color = "blue").  These are the properties of 
+                  "my_circle".
+               </p>
+               <p>
+                  To access the properties of "my_circle" at a later time, 
+                  we can use the instance methods of the class "Circle" 
+                  that we defined earlier.
+               </p>
+               <pre><code>
+my_circle.radius   # => 3
+my_circle.circumference   # => calculate to be 18.84 based on the radius we provided for this specific object
+my_circle.color   # => "blue"
+               </pre></code>
+               <p>
+                  If we define a new object like "your_circle", we can use 
+                  the same instance methods defined by the class "Circle" 
+                  to get our radius, color and circumference for that new
+                  specific object.
+               </p>
+               <pre><code>
+#define a new circle object named "your_circle"
+
+      my_circle = Circle.new(3, "blue")
+
+# call the instance methods defined in the "Circle" class
+
+      your_circle.radius   # => 15
+      your_circle.circumference   # => calculate to be 94.2
+      your_circle.color   # => "red"
+               </pre></code>
             </content>
          </article>
       </div>
