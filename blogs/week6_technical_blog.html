@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 
 <head>
@@ -38,7 +38,68 @@
             <content class="intro">
                <img src="../images/function_machine.jpg"> 
                <p>
-                  Write blog here
+                  Depending on its needs, developers may choose to structure a program based on several models.  Two of these models, functional programming and object-oriented programming (OOP), have something different to offer.
+               </p>
+               <p>
+                  In functional programming, mutable data are avoided. Variables represent storage locations in a computer's memory.  The contents of these memory locations, at any given point during the program's execution, is called the program's state.  Functional programming aims to avoid changing the values assigned to variables once they've been assigned.  Much like mathematical functions that take an input x to produce an output y, functions are used to produce results based only on these immutable data as inputs.
+               </p>
+               <pre>
+                  <code>
+   example:
+
+   length_of_wood_A = 5
+   length_of_wood_A_cut_half = length_of_wood_A / 2
+   length_of_wood_A_cut_third = length_of_wood_A / 3
+   length_of_wood_B = 20
+   length_of_wood_B_cut_half = length_of_wood_B / 2
+   length_of_wood_B_cut_third = length_of_wood_B / 3
+
+   ------------ OR ALTERNATIVELY ------------
+
+   def cut_half(x)
+      x/2
+   end
+
+   def cut_third(x)
+      x/3
+   end
+
+   length_of_wood_A = 5
+   length_of_wood_A_cut_half = cut_half(length_of_wood_A)
+   length_of_wood_A_cut_third = cut_third(length_of_wood_A)
+   length_of_wood_B = 5
+   length_of_wood_B_cut_half = cut_half(length_of_wood_B)
+   length_of_wood_B_cut_third = cut_third(length_of_wood_B)
+                  </code>
+               </pre>
+               <p>
+                  Either way, one ends up with 6 variables representing 6 different quantities.
+               </p>
+               <p>
+                  In contrast, OOP welcomes state and mutable data, treating them as objects that have attributes and methods (which act like subroutines) to establish behavior.  Several instances of the same class may be defined with different properties.
+               </p>
+               <pre>
+                  <code>
+   class Wood
+      def initialize(length)
+         @length = length
+      end
+
+      def cut(fraction)
+         return @length/fraction
+      end
+   end
+
+   wood_A = Wood.new(5)
+   wood_A_half.cut(2)
+   wood_A_third.cut(3)
+   wood_B = Wood.new(20)
+   wood_B_half.cut(2)
+   wood_B_third.cut(3)
+                  </code>
+               </pre>
+               <p>
+                  In this case, one ends up with 2 objects, each with properties defined by the class.
                </p>
             </content>
          </article>
