@@ -28,17 +28,45 @@
 
          <article class="topContent">
             <header>
-               <h2>Title</h2>
+               <h2>SQL Injection</h2>
             </header>
 
             <footer>
-               <p class="postInfo"><b>Month Day, Year</b></p>
+               <p class="postInfo"><b>April 26, 2014</b></p>
             </footer>
 
             <content class="intro">
-               <img src="../images/pears.jpg"> <!--  pick a new image -->
+               <img src="../images/injection.jpg">
                <p>
-                  Write blog here
+                  SQL injection is a technique that exploits security loopholes in data driven applications.  Examples of SQL injection can take the form of:
+                  <ul>
+                     <li><em>Incorrectly filtered escape characters</em> - For example, entering <mark>' or '1'='1</mark> as the userName for the line of code:
+                        <aside>
+                           <code>&nbsp;&nbsp;&nbsp;&nbsp;SELECT * FROM users WHERE name ='" + userName + "';</code>
+                        </aside>
+                        renders the SQL statement
+                        <aside>
+                           <code>&nbsp;&nbsp;&nbsp;&nbsp;SELECT * FROM users WHERE name = '' OR '1'='1';</code>
+                        </aside>
+                     If this code was part of an authentication procedure, access would be granted since '1'='1' is always true.</li>
+                     <li><em>Incorrect type handling</em> - For example, entering <mark>1;DROP TABLE users</mark> as a_variable for the line of code:
+                        <aside>
+                           <code>&nbsp;&nbsp;&nbsp;&nbsp;SELECT * FROM userinfo WHERE id =" + a_variable + ";</code>
+                        </aside>
+                        renders the SQL statement
+                        <aside>
+                           <code>&nbsp;&nbsp;&nbsp;&nbsp;SELECT * FROM userinfo WHERE id=1;DROP TABLE users;</code>
+                        </aside>
+                     This code would result in the server's unintended loss of data.</li>
+                  </ul>
+               </p>
+               <p>
+                  To help reduce the chances or effects of the negative consequences of SQL injection, some steps that can be taken which include:
+                  <ul>
+                     <li><em>Use prepared statements</em> - in SQL injection, user input is used as part of the SQL statement.   Prepared statements force the user input to be handled as the content of a parameter (and not as part of the SQL command).  The query and the data are sent to the SQL server separately using different protocols.
+                     <li><em>Escape user input characters that have special meaning in SQL before putting it in a query</em></li>
+                     <li><em>Check for patterns</em> - require users to provide input using a specific type and format.  Then check to see if the type and input syntax are valid.</li>
+                  </ul>
                </p>
             </content>
          </article>
