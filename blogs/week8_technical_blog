@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Jon's Website - Blogs</title>
+   <meta charset="utf-8">
+   <link rel="stylesheet" type="text/css" href="../stylesheets/jpabicoblog.css"/>
+   <script src="../scripts/jquery-1.11.0.js"></script>
+   <script src="../scripts/textgrab.js"></script>
+</head>
+
+<body class="body">
+
+   <header class="mainHeader">
+      <img src="../images/pabicodelogo.jpg">
+      <nav>
+         <ul>
+            <li><a class="active" href="../index.html">Home</a></li>
+            <li><a href="blog_latest.html">Blogs</a></li>
+            <li><a href="../homepagelinks.html">Links</a></li>
+            <li><a href="mailto:jbpabico%40gmail%2Ecom" target = "_blank">Contact</a></li>
+         </ul>
+      </nav>
+   </header>
+
+   <div class="mainContent">
+      <div class="content">
+
+         <article class="topContent">
+            <header>
+               <h2>Big O Complexity and Notation</h2>
+            </header>
+
+            <footer>
+               <p class="postInfo"><b>May 1, 2014</b></p>
+            </footer>
+
+            <content class="intro">
+               <img src="../images/sample_functions.jpg"> <!--  pick a new image -->
+               <p>
+                  Big O complexity is a way used to measure worst-case, best-case and average-case performances of algorithms.  It's an indication of how well computer algorithms scale as the amount of data involved increases.  A mathematical analogy can be made for the algorithms using the table above.  We can think of the functions as the time it takes us to completely carry out the algorithms and x as the amount of data being processed by the algorithms.  Notice that as x ("the amount of data") increases, our functions (the "time for completing the algorithms") change in value differently.  How they change depends on the algorithm being used.  Big O notation is used to describe shorthand how different types of algorithms perform.  "O" (for "order" of the function) is used in Big O notation.  Shown below are a few common examples (not an exhaustive list).
+                  <ul>
+                     <li>O(1)</li>
+                        <ul>
+                           <li>order of 1</li>
+                           <li>the code executes in the same amount of time no matter how much data there is</li>
+                           <li>for example, <em>adding an item to an array</em> takes the same amount of time whether the array initially has 7 elements or 7,000 elements</li>
+                           <li>analogous to f(x) in table above (a constant function)</li>
+                        </ul>
+                     <li>O(N)</li>
+                        <ul>
+                           <li>order of N</li>
+                           <li>the time needed to complete an algorithm is directly proportional to the amount of data</li>
+                           <li>for example, a <em>linear search</em> that takes 10 seconds to complete will take three times longer to complete if the amount of data is also increased by a factor of 3</li>
+                           <li>analogous to g(x) in table above (a linear function)</li>
+                        </ul>
+                     <li>O(N^2)</li>
+                        <ul>
+                           <li>order of N squared</li>
+                           <li>the time needed to complete an algorithm is proportional to the square of the amount of data</li>
+                           <li>for example, a <em>bubble sort</em> (which has nested iterations/loops) on a set of data will take 9 times longer if it were 3 times bigger</li>
+                           <li>analogous to h(x) in table above (a quadratic function)</li>
+                        </ul>
+                     <li>O(log N)</li>
+                        <ul>
+                           <li>order of log N (more specifically, log base 2)</li>
+                           <li>the time needed to complete an algorithm is significantly reduced (compared to O(N) and O(N^2)) because the amount of data used is decreased by approximately 50% each time it passes through the algorithm</li>
+                           <li>for example, a <em>binary sort</em> uses only the "upper half" or the "lower half" of the data from the previous pass</li>
+                           <li>increasing the amount of data has little or no effect early on</li>
+                           <li>analogous to k(x) in table above (a logarithmic function)</li>
+                        </ul>
+                  </ul>
+                  These notations can be used to describe the complexity (worst-, best-, and average-case scenarios) of algorithms.  For example, the worst-, best-, and average-case scenarios for a bubble sort are O(N^2), O(N), and O(N^2), respectively.  Though the calculations to determine these are beyond the scope of this discussion, it should be clear that different algorithms have varying levels of complexity.
+               </p>
+            </content>
+         </article>
+      </div>
+   </div>
+
+   <aside class="topSidebar">
+      <div class="topSide"><img src="../images/ice.jpg"></div>
+      <article>
+         <p>
+            "The only true wisdom is in knowing you know nothing."
+            <br>
+            <div align="right">
+            Socrates
+            </div>
+         </p>
+      </article>
+   </aside>
+
+   <aside class="bottomSidebar">
+      <article>
+         <h2>Blogs Archive</h2>
+         <p><a href = "blog_latest.html">Read my other blogs</a></p>
+      </article>
+   </aside>
+
+   <footer class="mainFooter">
+      <p>&copy; Copyright 2014 Jon Pabico<a href=""></a></p>
+   </footer>
+
+</body>
+</html>
