@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Jon's Website - Blogs</title>
+   <meta charset="utf-8">
+   <link rel="stylesheet" type="text/css" href="../stylesheets/jpabicoblog.css"/>
+   <script src="../scripts/jquery-1.11.0.js"></script>
+   <script src="../scripts/textgrab.js"></script>
+</head>
+
+<body class="body">
+
+   <header class="mainHeader">
+      <img src="../images/pabicodelogo.jpg">
+      <nav>
+         <ul>
+            <li><a class="active" href="../index.html">Home</a></li>
+            <li><a href="blog_latest.html">Blogs</a></li>
+            <li><a href="../homepagelinks.html">Links</a></li>
+            <li><a href="mailto:jbpabico%40gmail%2Ecom" target = "_blank">Contact</a></li>
+         </ul>
+      </nav>
+   </header>
+
+   <div class="mainContent">
+      <div class="content">
+
+         <article class="topContent">
+            <header>
+               <h2>A Beginner's Guide to Regular Expressions</h2>
+            </header>
+
+            <footer>
+               <p class="postInfo"><b>May 4, 2014</b></p>
+            </footer>
+
+            <content class="intro">
+               <img src="../images/expressions.jpg"> <!--  pick a new image -->
+               <p>
+                  A regular expression is a sequence of characters that forms a search pattern.  Each character in a regular expression represents a literal meaning or a variety of special meanings.  Here, I will show some regular expressions and their meaning so you can learn by example.  All regular expressions are written between two forward slashes / -regular expression goes here- /.  A caret ^ indicates the beginning of the expression.  A dollar sign $ indicates the end of the expression.
+                  <h2>Matching a User Name</h2>
+                  /^[a-z0-9_-]{3,16}$/
+                  <ul>
+                     <li> ^ beginning of expression</li>
+                     <li> [a-z0-9_-] any lowercase letter (a-z), number (0-9), an underscore, or a hyphen</li>
+                     <li> { 3,16} at least 3 character but no more than 16</li>
+                     <li> & end of expression</li>
+                  </ul>
+                  <h2>Matching a User Name</h2>
+                  /^[a-z0-9_-]{3,16}$/
+                  <ul>
+                     <li> ^ beginning of expression</li>
+                     <li> [a-z0-9_-] any lowercase letter (a-z), number (0-9), an underscore, or a hyphen</li>
+                     <li> { 3,16} at least 3 character but no more than 16</li>
+                     <li> & end of expression</li>
+                  </ul>
+                  At the core of jQuery is the ability to select some elements and do something with them.  The basic syntax is:
+<pre><code>$(selector).action()</code></pre>
+                  Here are some example of the meaning of the syntax:
+<pre>
+<code>$('p')   // select all the < p > elements in the document
+$('#profile')   // select html elements that have an id of "profile"
+$('.important')   // select html elements that have a class of "important"
+$('li.important')   // select all list items with class "important"
+$('#profile input')   // select all < input > elements that are descendants of an element with the id "profile"</code>
+</pre>
+                  All of the above return array-like objects (i.e. there is a ".length" method, array[index] can be used to access particular elements of the return, etc)
+               </p>
+               <p>
+                  Once a selection has been chosen, methods can be called on the selection.
+                  Here are some example of the meaning of the syntax:
+<pre>
+<code>$('li').text()   // get the text content of all < li > elements
+$('li').text("Hello")   // set the text content of all < li > elements to "Hello"
+$('input').val()   // get the value of the first < input > element
+$('input').val('')   // set the value of the first < input > element to an empty string
+
+//Note above that jQuery uses the same method name for getting and setting
+
+$('#picture').hide()   // hide HTML elements that have an id "picture"
+$('#picture').show()   // show HTML elements that have an id "picture"</code>
+</pre>
+                  Here is the full list of the methods available on jQuery objects from <a href = "http://api.jquery.com" target = "_blank">http://api.jquery.com</a>.
+               </p>
+            </content>
+         </article>
+      </div>
+   </div>
+
+   <aside class="topSidebar">
+      <div class="topSide"><img src="../images/ice.jpg"></div>
+      <article>
+         <p>
+            "The only true wisdom is in knowing you know nothing."
+            <br>
+            <div align="right">
+            Socrates
+            </div>
+         </p>
+      </article>
+   </aside>
+
+   <aside class="bottomSidebar">
+      <article>
+         <h2>Blogs Archive</h2>
+         <p><a href = "blog_latest.html">Read my other blogs</a></p>
+      </article>
+   </aside>
+
+   <footer class="mainFooter">
+      <p>&copy; Copyright 2014 Jon Pabico<a href=""></a></p>
+   </footer>
+
+</body>
+</html>
