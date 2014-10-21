@@ -333,7 +333,7 @@ body {
     color: #fff;
     word-break: break-word;
     background-color: #383737;
-    background-image: url("../images/grand_piano.jpg");
+    background-image: url("../images/thinker.jpg");
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -721,9 +721,10 @@ font-style:normal
 .site-wrap--home {
     height: 100vh
 }
+/*
 .home-intro {
     padding: 1em;
-    border: 1px solid white;
+    border: 1px solid red;
     padding: 3em 1.5em 1.35em;
     text-align: center;
     background-color: white;
@@ -737,6 +738,7 @@ font-style:normal
     transform: translateY(-50%);
     text-align: center
 }
+*/
 @media screen and (min-width: 48em) {
     .home-intro {
         width: 70%
@@ -824,7 +826,7 @@ font-style:normal
     margin-left: 0
 }
 .nav--primary li a {
-    font-weight: 400
+    font-weight: 400;
 }
 .nav--tertiary {
     font-size: .875em
@@ -900,14 +902,18 @@ font-style:normal
     font-size: 1em;
     line-height: 1.7;
     margin-bottom: 1.41667em;
+    color: antiquewhite;
+    /*opacity: 0.9;*/
 }
 .intro__logo a {
-    font-size: 1.3em;
+    font-size: 2em;
     text-transform: uppercase;
-    color: white;
+    color: antiquewhite;
+    /*opacity: 0.9;*/
 }
 .intro__logo a, .intro__logo a:visited {
-    color: white;
+    color: antiquewhite;
+    /*opacity: 0.9;*/
 }
 .intro__paragraph {
     margin-bottom: 1.7em;
