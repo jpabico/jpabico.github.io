@@ -80,7 +80,8 @@ sub {
     bottom: -0.25em
 }
 img.highlight--blue {
-    border-color: #3291ff
+    border-color: #3291ff;
+    width:150%;
 }
 img.highlight--red {
     border-color: #ff3b3f
@@ -227,7 +228,7 @@ img[height] {
 }
 */
 img, audio, canvas, embed, object, video {
-    max-width: 100%
+    max-width: 75%
 }
 iframe {
     display: block
@@ -1576,4 +1577,13 @@ span.wpcf7-not-valid-tip {
     opacity: 1
 }
 
-img.portfolio-piece__image.highlight--blue {margin: 5%;}
+img.portfolio-piece__image.highlight--blue {
+    display: block;
+    margin: 5% auto;
+    font-style: italic;
+    color: #666;
+    vertical-align: middle;
+    padding:1px;
+   border-radius: 10px;
+}
+
