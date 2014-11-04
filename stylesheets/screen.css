@@ -1076,7 +1076,7 @@ font-style:normal
 }
 @media screen and (min-width: 78em) {
     .portfolio-piece__image-wrap--tall {
-        max-height: 34.7em;
+        max-height: 40em;
         margin-bottom: -3.4em
     }
 }
@@ -1580,6 +1580,7 @@ span.wpcf7-not-valid-tip {
 img.portfolio-piece__image.highlight--blue {
     display: block;
     margin: 5% auto;
+    /*margin-bottom: 20%;*/
     font-style: italic;
     color: #666;
     vertical-align: middle;
