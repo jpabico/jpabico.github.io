@@ -728,7 +728,7 @@ font-style:normal
     border: 1px solid red;
     padding: 3em 1.5em 1.35em;
     text-align: center;
-    background-color: white;
+    background-color: linen;
     position: relative;
     top: 50%;
     margin: auto;
@@ -816,7 +816,7 @@ font-style:normal
     content: "";
     width: 100%;
     height: .15em;
-    background: antiquewhite;
+    background: linen;
     border-radius: 5em;
     position: absolute;
     bottom: 0;
@@ -842,7 +842,7 @@ font-style:normal
     }
     .nav--tertiary a {
         padding: .25em 1em;
-        background-color: transparent
+        background-color: transparent;
     }
     .nav--tertiary li, .nav--tertiary a {
         display: inline-block;
@@ -903,22 +903,22 @@ font-style:normal
     font-size: 1em;
     line-height: 1.7;
     margin-bottom: 1.41667em;
-    color: antiquewhite;
+    color: linen;
     /*opacity: 0.9;*/
 }
 .intro__logo a {
     font-size: 2em;
     text-transform: uppercase;
-    color: antiquewhite;
+    color: linen;
     /*opacity: 0.9;*/
 }
 .intro__logo a, .intro__logo a:visited {
-    color: antiquewhite;
+    color: linen;
     /*opacity: 0.9;*/
 }
 .intro__paragraph {
     margin-bottom: 1.7em;
-     color: white;
+     color: linen;
 }
 @media screen and (min-width: 62em) {
     .intro__paragraph {
@@ -1009,7 +1009,7 @@ font-style:normal
     font-style: italic
 }
 .portfolio-piece__wrap {
-    background-color: white;
+    background-color: linen;
     padding: 3.4em 0;
     position: relative
 }
@@ -1252,7 +1252,7 @@ font-style:normal
     }
 }
 .nav--home li a {
-    color: antiquewhite;
+    color: linen;
 }
 .push-top {
     margin-top: 1.7em
@@ -1590,6 +1590,7 @@ img.portfolio-piece__image.highlight--blue {
 
 .section_quote {
     font-size: 0.7em;
+    margin: 0 auto;
 }
 
 .section_quote footer{
@@ -1601,10 +1602,12 @@ img.portfolio-piece__image.highlight--blue {
 }
 
 .highlight--blue {
-    color: #3291ff
+    color: #3291ff;
 }
 
+.highlight--purple {
+    color: #CF4FE7;}
 /*ul.nav.nav--primary li {
 
-    color: antiquewhite;
+    color: linen;
 }*/
