@@ -1,200 +1,148 @@
-<!doctype html>
 
-<html>
-<head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1 minimal-ui">
-        <meta name="description" content="Full stack web developer from Reno, Nevada"/>
-        <title>Portfolio - Jon Pabico</title>
+<!DOCTYPE html>
+<html lang="en" ng-app='myapp'>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jon Pabico - Web Developer</title>
 
-        <link rel="stylesheet" href="stylesheets/screen.css">
-        <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js?ver=3.9-alpha-27111'></script>
-</head>
+    <!-- layout.css file -->
+    <link rel="stylesheet" type="text/css" href="layout.css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans&effect=shadow-multiple">
 
-<body class="home page page-id-347 page-template page-template-portfolio-php">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
-    <header class="header header--push header-wrap">
-        <div class="container">
-            <div class="grid">
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
-                <div class="intro grid__cell unit-1-2--bp2">
-                    <h1 class="intro__logo"><a href="javascript:history.go(0)">Jon Pabico</a><br/>Full-Stack Web Developer</h1>
-                    <p class="intro__paragraph">"Solutions, one line at a time."</p>
-                </div>
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
-                <nav class="nav-container grid__cell unit-1-2--bp2">
-                    <ul class="nav nav--primary">
-                        <li class="is-current is-current"><a href="javascript:history.go(0)">Portfolio</a></li>
-                        <li><a href="Pabico_CV_2015.pdf">Resume (pdf)</a></li>
-                    </ul>
-                </nav>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+
+  </head>
+  <body ng-controller='BigController as big'>
+
+    <div class='container'>
+
+        <div class="row main">
+            <div class="myheading col-md-11">
+                <h1 id='jon' class="font-effect-shadow-multiple">
+                    <a href="./Pabico_CV_20150401.pdf" target="_blank">
+                        Jon Pabico
+                        <footer id='title'>Full-Stack Web Developer</footer>
+                        <footer id='cv'>CV / Resume / Contact Info</footer>
+                    </a>
+                </h1>
             </div>
         </div>
-        
-    </header>
 
-    <div class="site-wrap">
+        <div class="row main">
+          
+          <!-- start of left-hand column -->
+          <div class="col-md-8">
 
-        <section class="portfolio-piece highlight--blue">
-            <h2 class="portfolio-piece__title">
-                <a class="portfolio-piece__link" href="http://jury2.herokuapp.com" data-portfolio="www.jury2.herokuapp.com">Jury</a>
-            </h2>
-            <div class="portfolio-piece__wrap">
-                <div class="grid">
-                    <div class="container">
-                        <div class="grid__cell unit-1-2--bp2 portfolio-piece__image-wrap portfolio-piece__image-wrap--tall">
-                            <div class = "section_quote">
-                                <blockquote class = "highlight--blue"><p>"Always vote on principle, though you may vote alone, and you may cherish the sweetest reflection that your vote is never lost."</p><footer> - John Adams</footer></blockquote>
+                <!-- screenshot of active app -->
+                <div class='main-pic-container'>
+                    <div class='main-pic'>
+                        <img ng-src='{{big.getAppImage(appClickNum)}}' />
+                    </div>
+                </div>
+
+                <!--start of tabs and descriptions inside left-hand column-->
+               <div class="row main">
+                    <div class="col-md-12">
+
+                    <!-- link to active app -->
+                    <div class='visitme'>
+                        <h2 class='visitors'>
+                            <a href="{{big.getAppUrl(appClickNum)}}" target="_blank">
+                                <p>{{big.getAppName(appClickNum)}}</p>
+                            </a>
+                        </h2>
+                    </div>
+
+                    <!-- tabs and panes -->
+                    <section ng-controller="PanelController as panel">
+                        <!-- tabs -->
+                        <ul class="nav nav-pills">
+                            <li role="presentation" ng-class="{active: panel.isSelected(1) }">
+                                <a href ng-click="panel.selectTab(1)">Description</a>
+                            </li>
+                            <li role="presentation" ng-class="{active: panel.isSelected(2) }">
+                                <a href ng-click="panel.selectTab(2)">Features</a>
+                            </li>
+                            <li role="presentation" ng-class="{active: panel.isSelected(3) }">
+                                <a href ng-click="panel.selectTab(3)">Technology</a>
+                            </li>
+                        </ul>
+                        <br/>
+                        <!-- panes -->
+                        <div class="panel theDescription" ng-show="panel.isSelected(1)">
+                            <p>&nbsp&nbsp&nbsp{{big.getAppDescription(appClickNum)}}</p>
+                        </div>
+
+                        <div class="panel theFeatures" ng-show="panel.isSelected(2)">
+                            <p>Features for <strong><em>{{big.getAppName(appClickNum)}}</em></strong> include:</p>
+                            <div ng-repeat='my1feature in stuff[appClickNum].features_text'>
+                                <!-- <p>{{big.getAppFeatures(appClickNum)[$index]}}</p> -->
+                                <!-- <p ng-bind-html="testhtml | to_trusted"></p> -->
+                                <p ng-bind-html="big.getAppFeatures(appClickNum)[$index] | to_trusted"></p>
                             </div>
-                            <a href="images/jury_landing_page.jpg" target="_blank"><img src="images/jury_landing_page.jpg" alt="" class="portfolio-piece__image portfolio-piece__image highlight--blue"></a>
-                            <a href="images/jury_case_sample.jpg" target="_blank"><img src="images/jury_case_sample.jpg" alt="" class="portfolio-piece__image portfolio-piece__image highlight--blue"></a>
                         </div>
-                        <div class="portfolio-piece__content grid__cell unit-1-2--bp2">
-                            <p>
-                                <b><em>Jury</em></b> is a social media web application that allows 2 parties to submit their arguments to the court of public opinion for resolution.   Its structure allows users to share thoughts, experiences, ideas, and life moments.  Educators can use this tool to help facilitate learning and discussion by involving students outside of the classroom.
-                            </p>
-                            <p>Some key features of <b><em>Jury</em></b> allow users to: </p>
-                            <ul>
-                                <li>Open new cases and make their arguments</li>
-                                <li>Upload videos from YouTube to support their cases</li>
-                                <li>Make a rebuttal to their opponents' cases</li>
-                                <li>Comment on each party's argument and support their causes</li>
-                                <li>Upvote and downvote comments</li>
-                                <li>Vote on cases and decided the winner!</li>
-                            </ul>
-                            <p><b><em>Jury</em></b> is a Ruby on Rails web app making use of technologies such as ActiveRecord, HTML5, CSS3, Javascript, AJAX, and APIs (YouTube, CRON).</p>
-                            <a href="http://jury2.herokuapp.com" class="icon--right-dir">Check out Jury</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <section class="portfolio-piece highlight--red">
-            <h2 class="portfolio-piece__title">
-                <a class="portfolio-piece__link" href="http://tumblr-clone-dbc.herokuapp.com" data-portfolio="www.tumblr-clone-dbc.herokuapp.com">Tumblr-Clone</a>
-            </h2>
-            <div class="portfolio-piece__wrap">
-                <div class="grid">
-                    <div class="container">
-                        <div class="grid__cell unit-1-2--bp2 portfolio-piece__image-wrap ">
-                            <div class = "section_quote">
-                                <blockquote class = "highlight--red"><p>"Whenever you do a thing, act as if all the world were watching."</p><footer> - Thomas Jefferson</footer></blockquote>
+                        <div class="panel theTechnology" ng-show="panel.isSelected(3)">
+                            <p>Technologies used for <strong><em>{{big.getAppName(appClickNum)}}</em></strong> include:</p>
+                            <div ng-repeat='my1technology in stuff[appClickNum].technology_text'>
+                                {{big.getAppTechnology(appClickNum)[$index]}}
                             </div>
-                            <a href="images/tumblr-clone-dbc.jpg" target="_blank"><img src="images/tumblr-clone-dbc.jpg" alt="" class="portfolio-piece__image portfolio-piece__image highlight--red"></a>
                         </div>
-                        <div class="portfolio-piece__content grid__cell unit-1-2--bp2">
-                            <p>
-                                <b><em>Tumblr-Clone</em></b> is a social networking application modeled after the Tumbl platform.  Like Tumblr, it allows users to post multimedia and other content to a short-form blog.  <em>Tumblr-Clone</em> is a personal project used for instructional purposes to teach others how to develop web apps using the Ruby on Rails framework.
-                            </p>
-                            <p><b><em>Tumblr-Clone</em></b> is a web app making use of technologies such as ActiveRecord, HTML5, CSS3, Bootstrap, Javascript, Ruby and Ruby on Rails.</p>
-                            <a href="http://tumblr-clone-dbc.herokuapp.com" class="icon--right-dir">Blog on Tumblr-Clone</a>
+                    </section>
+
+                    </div>
+                </div>
+                <!--end of tabs and descriptions inside left-hand column-->
+
+<footer><p id="copyright">This portfolio is powered by Angular.js  &nbsp|&nbsp  &copy; Copyright 2015 Jon Pabico</p></footer>
+          </div>
+          <!-- end of left-hand column -->
+          <!-- start of right-hand column -->
+          <div class="col-md-3">
+                    
+                <h2 id='instructions'> Explore! </h2>
+
+                <!-- thumbnails for each app - all are sized 1280 x 800-->
+                <div class='thumbnails' ng-controller='GalleryController as gallery'>
+                    <div ng-repeat ="my1stuff in stuff" ng-class="{'selected':$index == appClickNum}">
+                       <div class="row main"  ng-click="big.setAppClickNum($index)">
+                            <img ng-src="{{big.getAppImage($index)}}" />
+                            <p id= 'image_name'>{{big.getAppName($index)}}</p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <section class="portfolio-piece highlight--green">
-            <h2 class="portfolio-piece__title">
-                <a class="portfolio-piece__link" href="http://letterstream.herokuapp.com" data-portfolio="www.letterstream.herokuapp.com">Letter Stream</a>
-            </h2>
-            <div class="portfolio-piece__wrap">
-                <div class="grid">
-                    <div class="container">
-                        <div class="grid__cell unit-1-2--bp2 portfolio-piece__image-wrap ">
-                            <div class = "section_quote">
-                                <blockquote class = "highlight--green"><p>"The more you read, the more things you will know.  The more that you learn, the more places you'll go."</p><footer> - Dr. Seuss</footer></blockquote>
-                            </div>
-                            <a href="images/letterstream_pic.jpg" target="_blank"><img src="images/letterstream_pic.jpg" alt="" class="portfolio-piece__image portfolio-piece__image highlight--green"></a>
-                        </div>
-                        <div class="portfolio-piece__content grid__cell unit-1-2--bp2">
-                            <p>
-                                <b><em>Letter Stream</em></b> is an educational web app that aids children in improving their reading skills.  Found "at the end of <em>The Reading Rainbow</em>", children can develop their creativity and write their own stories, adjust the speed and color of the reading highlighter, and upload text files for more practice.
-                            </p>
-                            <p>Designed with the Sinatra framework, <b><em>Letter Stream</em></b> uses HTML5, CSS3, Javascript, ActiveRecord, PostgreSQL and Ruby.</p>
-                            <a href="http://letterstream.herokuapp.com" class="icon--right-dir">Try Letter Stream</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+          </div>
+          <!-- end of right-hand column -->
 
-        <section class="portfolio-piece highlight--blue">
-            <h2 class="portfolio-piece__title">
-                <a class="portfolio-piece__link" href="http://connect-4-dbc.herokuapp.com" data-portfolio="www.connect-4-dbc.herokuapp.com">Flizzard Connect</a>
-            </h2>
-            <div class="portfolio-piece__wrap">
-                <div class="grid">
-                    <div class="container">
-                        <div class="grid__cell unit-1-2--bp2 portfolio-piece__image-wrap ">
-                            <div class = "section_quote">
-                                <blockquote class = "highlight--blue"><p>"Talent wins games, but teamwork and intelligence wins championships."</p><footer> - Michael Jordan</footer></blockquote>
-                            </div>
-                            <a href="images/connect-4.jpg" target="_blank"><img src="images/connect-4.jpg" alt="" class="portfolio-piece__image portfolio-piece__image highlight--blue"></a>
-                        </div>
-                        <div class="portfolio-piece__content grid__cell unit-1-2--bp2">
-                            <p>
-                                <b><em>Flizzard Connect</em></b> is a group's take on the classic Connect 4 boardgame.  Built as a team project at Dev Bootcamp, users can have hours of fun and enjoyment recapturing their childhood with this online version.
-                            </p>
-                            <p><em>Flizzard Connect</em></b> uses HTML5, CSS3, and Javascript (as well as one line of PHP!).</p>
-                            <a href="http://connect-4-dbc.herokuapp.com" class="icon--right-dir">Play Flizzard Connect</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="portfolio-piece highlight--purple">
-            <h2 class="portfolio-piece__title">
-                <a class="portfolio-piece__link" data-portfolio="currently under construction">Qu-est</a>
-            </h2>
-            <div class="portfolio-piece__wrap">
-                <div class="grid">
-                    <div class="container">
-                        <div class="grid__cell unit-1-2--bp2 portfolio-piece__image-wrap portfolio-piece__image-wrap--tall">
-                            <div class = "section_quote">
-                                <blockquote class = "highlight--purple"><p>"What we want to see is the child in pursuit of knowledge, and not the knowledge in pursuit of the child."</p><footer> - George Bernard Shaw</footer></blockquote>
-                            </div>
-                            <a href="images/quest_pic.jpg" target="_blank"><img src="images/quest_pic.jpg" alt="" class="portfolio-piece__image portfolio-piece__image highlight--purple"></a>
-                        </div>
-                        <div class="portfolio-piece__content grid__cell unit-1-2--bp2">
-                            <p><b><em>Quest</em></b> is an educational web app that allows students to assess one another inside and outside the classroom.</p>
-                            <p>Students can write a Quest (QUiz-tEST question) and send it via Twitter to his/her fellow classmates.  Every student has the opportunity to answer questions and get immediate feedback.</p>
-                            <p>In addition, teachers can see the results of the entire class for every question, allowing for better planning and instructional design.</p>
-                            <a class="portfolio-piece__link icon--right-dir" data-portfolio="currently under construction">Check back soon to try Qu-est</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="portfolio-piece highlight--orange">
-            <h2 class="portfolio-piece__title">
-                <a class="portfolio-piece__link" href="mailto:jbpabico%40gmail%2Ecom" data-portfolio="jbpabico@gmail.com">Contact Me</a>
-            </h2>
-            <div class="portfolio-piece__wrap">
-                <div class="grid">
-                    <div class="container">
-                        <div class="grid__cell unit-1-2--bp2 portfolio-piece__image-wrap ">
-                            <img src="images/profile_pic.jpg" alt="" class="portfolio-piece__image portfolio-piece__image highlight--orange">
-                        </div>
-                        <div class="portfolio-piece__content grid__cell unit-1-2--bp2">
-                                <a class="icon--right-dir">Do you have a project in mind?</a><br/>
-                                <a class="icon--right-dir">Want to make your idea into a reality?</a><br/>
-                                <a class="icon--right-dir">Just want to say "hi"?</a><br/><br/>
-                            <a href="mailto:jbpabico%40gmail%2Ecom" target = "_blank"><img id="email" style= "border:none" src="images/email_button.png">Email me</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <footer><p id="copyright">&copy; Copyright 2014 Jon Pabico</p></footer>
-        </section>
-
-
+        </div>
     </div>
 
-    <script type='text/javascript' src='javascript/scripts.js'></script>
-</body>
+    <!-- Angular module -->
+    <script type="text/javascript" src='app.js'></script>
+
+  </body>
 </html>
+
+<!-- things to do -->
+<!-- hover on title to show url -->
+<!-- overflow scroll should be added to panel window -->
+<!-- features text and technology text htmls need to be written -->
+<!-- move data (myAppsInfo) to firebase ...reference angular course-->
+<!-- host on firebase or github? -->
