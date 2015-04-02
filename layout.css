@@ -1,0 +1,142 @@
+    html body {
+        background-image: url('./images/background_night_sky.jpg');
+        background-size: cover;
+    }
+
+    /*all images*/
+    .container img {
+        width: 100%;
+        height: auto;
+    }
+
+    .main {
+        width: 95%;
+    }
+
+    #jon {
+        text-align: center;
+    }
+
+    #jon a {
+        font-size: 48px;
+        text-align: center;
+        text-decoration: none;
+        color:antiquewhite;
+        font-family: 'Droid Sans', serif;
+        font-size: 48px;
+        text-shadow: 4px 4px 4px #aaa;
+    }
+
+    #jon:hover {
+        color: black;            
+        text-decoration: none;
+    }
+
+    #title {
+        font-size: 20px;
+    }
+
+    #cv {
+        font-size: 15px;
+    }
+
+    /*left-hand column*/
+    .col-md-8 {
+        border: solid antiquewhite;
+        border-radius: 10px;
+        padding: 25px;
+        margin-top: 25px;
+    }
+
+    /*active app image*/
+    .main-pic {
+        border: solid #000045;
+        border-radius: 10px;
+        border-width: 10px;
+        width: auto;
+    }
+
+    /*title tab panel window section*/
+    .col-md-12 {
+        /*padding: 95px;*/
+        margin: 5px 30px;
+        /*border:solid;*/
+    }
+
+    /*app title*/
+    h2.visitors a {
+        text-align: center;
+        font-size: 35px;
+        color: antiquewhite;
+        /*background-color: navy;*/
+        width: 50%;
+        font-family: 'Droid Sans', serif;
+        text-shadow: 4px 4px 4px #aaa;
+    }
+
+    /*app title hover*/
+    h2.visitors a:hover , .visitme:hover {
+        color: navy;
+        text-decoration: none;
+        background-color: antiquewhite;
+        border-radius: 5px;
+    }
+
+    /*tab panel windows*/
+    div.panel {
+        height: 200px;
+        padding: 10px;
+        border: solid #000045;
+        border-radius: 10px;
+        border-width: 10px;
+        overflow: scroll;
+    }
+
+    div.theDescription, div.theFeatures,  div.theTechnology {
+        font-family: 'century gothic', 'trebuchet ms', arial;
+    }
+
+    #copyright {
+        color: gray;
+        margin-left: 40px;
+    }
+
+    /*right-hand column*/
+    .col-md-3 {
+        border:solid antiquewhite;
+        border-radius: 10px;
+        margin: 25px 30px;
+        color: antiquewhite;
+    }
+
+    /*label for thumbnail column*/
+    #instructions {
+        font-size: 25px;
+        text-align: center;
+        font-family: 'Droid Sans', serif;
+        text-shadow: 4px 4px 4px #888;
+    }
+
+    /*thumbnails*/
+    .thumbnails  .row {
+        margin: 15px auto;
+        font-family: 'Droid Sans', serif;
+        padding: 10px;
+   }
+
+   #image_name {
+    margin: 5px auto;
+    text-align: center;
+   }
+
+    /*selection box*/
+    .selected {
+        border: solid blue;
+        border-width: 7px;
+        border-radius: 10px;
+        background-color: #FFFFF0;
+        color:navy;
+        font-size: 17px;
+        font-family: 'Droid Sans', serif;
+        text-shadow: 4px 4px 4px #888;
+    }
