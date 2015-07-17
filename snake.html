@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Snake in JS</title>
+  <style type="text/css">
+    canvas {
+      display: block;
+      position: absolute;
+      border: 1px solid #000;
+      margin: auto;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+  <script type="text/javascript">
+
+    // constants, grid IDs, key codes
+    var COLS = 26, ROWS = 26;
+    var EMPTY = 0, SNAKE = 1, FRUIT = 2;
+    var LEFT = 0, UP = 1, RIGHT = 2, DOWN = 3;
+    var KEY_LEFT = 37, KEY_UP = 38, KEY_RIGHT = 39, KEY_DOWN = 40;
+
+    // grid represented by html canvas
+    var grid = {
+      width: null,
+      height: null,
+      _grid: null,
+
+      // initiate and fill col x row grid with value d
+      init: function(d, numCols, numRows) {
+        this.width = numCols;
+        this.height = numRows;
+        this._grid = [];
+        for(var x = 0; x < numCols; x++) {
+          this._grid.push([]);
+          for(var y = 0; y< numRows; y++) {
+            this._grid[x].push(d);
+          }
+        }
+      },
+
+      // set and get value of cell at x, y
+      set: function(val, x, y) {
+        this._grid[x][y] = val;
+      },
+
+      get: function(x, y) {
+        return this._grid[x][y];
+      }
+    };
+
+    // snake represented by queue
+    var snake = {
+      direction: null,
+      last: null,
+      _queue: null,
+
+      // clears queue and sets start position and direction
+      init: function(d, x, y) {
+        this.direction = d;
+        this._queue = [];
+        this.insert(x, y);
+      },
+
+      // add/remoce elements to/from queue
+      // pointer to last element in queue
+      insert: function(x, y) {
+        this._queue.unshift({x:x, y:y});
+        this.last = this._queue[0];
+      },
+
+      remove: function() {
+        return this._queue.pop();
+      }
+    };
+
+    // position set randomly to empty cell in grid
+    function setFood() {
+      var empty = [];
+      for(var x = 0; x < grid.width; x++) {
+        for(var y = 0; y < grid.height; y++) {
+          if(grid.get(x, y) === EMPTY) {
+            empty.push({x:x, y:y});
+          }
+        }
+      }
+
+      // random position
+      var randomPosition = empty[Math.floor(Math.random()*empty.length)];
+
+      grid.set(FRUIT, randomPosition.x, randomPosition.y);
+    }
+
+    // game objects
+    var canvas, context;
+    var keystate, frames, score;
+
+    function main() {
+      canvas = document.createElement("canvas");
+      canvas.width = COLS*20;
+      canvas.height = ROWS*20;
+      context = canvas.getContext("2d");
+      document.body.appendChild(canvas);
+      context.font= "12px Arial";
+
+      frames = 0;
+      keystate = {};
+      document.addEventListener("keydown", function(e) {
+        keystate[e.keyCode] = true;
+      });
+      document.addEventListener("keyup", function(e) {
+        delete keystate[e.keyCode];
+      });
+
+      init();
+      loop();
+    }
+
+    function init() {
+
+      score = 0;
+      grid.init(EMPTY, COLS, ROWS);
+
+      // start position of snake
+      var sp = {x:Math.floor(COLS/2), y:ROWS-1};
+      snake.init(UP, sp.x, sp.y);
+      grid.set(SNAKE, sp.x, sp.y);
+
+      setFood();
+    }
+
+    function loop() {
+      update();
+      draw();
+      window.requestAnimationFrame(loop, canvas);
+    }
+
+    function update() {
+      frames++;
+
+      // update snake direction
+      if (keystate[KEY_LEFT] && snake.direction !=RIGHT) {
+        snake.direction = LEFT;
+      }
+      if (keystate[KEY_UP] && snake.direction !=DOWN) {
+        snake.direction = UP;
+      }
+      if (keystate[KEY_RIGHT] && snake.direction !=LEFT) {
+        snake.direction = RIGHT;
+      }
+      if (keystate[KEY_DOWN] && snake.direction !=UP) {
+        snake.direction = DOWN;
+      }
+
+      if(frames%12 === 0) {
+        var newX = snake.last.x;
+        var newY = snake.last.y;
+
+        // update snake position
+        switch (snake.direction) {
+          case LEFT:
+            newX--;
+            break;
+          case UP:
+            newY--;
+            break;
+          case RIGHT:
+            newX++;
+            break;
+          case DOWN:
+            newY++;
+            break;
+        }
+
+        // check if out of bounds or self collides
+        if(0 > newX || newX > grid.width-1 ||
+          0 > newY || newY > grid.height-1 ||
+          grid.get(newX, newY) === SNAKE) {
+            return init();
+        }
+
+        // check if snake grows
+        if (grid.get(newX, newY) === FRUIT) {
+          score++;
+          var tail = {x: newX, y: newY};
+          setFood();
+        } else {
+          var tail = snake.remove();
+          grid.set(EMPTY, tail.x, tail.y);
+          tail.x = newX;
+          tail.y = newY;
+        }
+
+        // 'move' snake to new position
+        grid.set(SNAKE, tail.x, tail.y);
+        snake.insert(tail.x, tail.y);
+      }
+    }
+
+    function draw() {
+      var tw = canvas.width/grid.width;
+      var th = canvas.height/grid.height;
+
+      for(var x = 0; x < grid.width; x++) {
+        for(var y = 0; y < grid.height; y++) {
+
+          // fill color
+          switch (grid.get(x, y)) {
+            case EMPTY:
+              // white
+              context.fillStyle = "#fff";
+              break;
+            case SNAKE:
+              // blue
+              context.fillStyle = "#0ff";
+              break;
+            case FRUIT:
+              // red
+              context.fillStyle = "#f00";
+              break;
+          }
+          context.fillRect(x*tw, y*th, tw, th);
+        }
+      }
+
+      // score board
+      context.fillStyle = "#000";
+      context.fillText("SCORE: " + score, 10, canvas.height-10);
+    }
+
+    main();
+  </script>
+
+</body>
+</html>
