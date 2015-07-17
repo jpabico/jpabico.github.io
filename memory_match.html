@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Memory in JS</title>
+  <style>
+
+    div#board{
+      background:#CCC;
+      border:#999 1px solid;
+      width:800px;
+      height:540px;
+      padding:24px;
+      margin:0px auto;
+    }
+
+    div#board > div {
+      background: url(images/square_tile_design.jpg) no-repeat;
+      border:#000 1px solid;
+      width:71px;
+      height:71px;
+      float:left;
+      margin:10px;
+      padding:20px;
+      font-size:64px;
+      cursor:pointer;
+      text-align:center;
+    }
+
+  </style>
+</head>
+<body>
+<div id="board"></div>
+  <script>
+
+    // card faces
+    var cardArray = ['a','a','b','b','c','c','d','d','e','e','f','f','G','G','H','H','I','I','J','J','K','K','L','L'];
+
+    // used to compare card face values
+    var cardValues = [];
+    var cardIDs = [];
+    var tilesFlipped = 0;
+
+    function newBoard(){
+      tilesFlipped = 0;
+      var output = '';
+      var shuffledCards = shuffle(cardArray);
+      for(var i = 0; i < shuffledCards.length; i++){
+        output += '<div id="tile_'+i+'" onclick="memoryFlipTile(this,\''+shuffledCards[i]+'\')"></div>';
+      }
+      document.getElementById('board').innerHTML = output;
+    }
+
+    function shuffle(array) {
+      var counter = array.length;
+      var temp;
+      var index;
+
+      while (counter) {
+          index = Math.floor(Math.random() * counter);
+          counter--;
+
+          // swap
+          temp = array[counter];
+          array[counter] = array[index];
+          array[index] = temp;
+      }
+      return array;
+    }
+
+    function memoryFlipTile(tile,val){
+      if(tile.innerHTML == "" && cardValues.length < 2) {
+        tile.style.background = '#FFF';
+        tile.innerHTML = val;
+        if(cardValues.length == 0) {
+          cardValues.push(val);
+          cardIDs.push(tile.id);
+        } else if(cardValues.length == 1) {
+          cardValues.push(val);
+          cardIDs.push(tile.id);
+
+          // check if cards match
+          if(checkMatchingPair()) {
+
+            // Check to see if the whole board is cleared
+            if(checkClear()) {
+              newBoard();
+            }
+          } else {
+            setTimeout(flipBack, 700);
+          }
+        }
+      }
+    }
+
+    function flipBack() {
+      var tileA = document.getElementById(cardIDs[0]);
+      var tileB = document.getElementById(cardIDs[1]);
+
+      tileA.style.background = 'url(images/square_tile_design.jpg) no-repeat';
+      tileA.innerHTML = "";
+      tileB.style.background = 'url(images/square_tile_design.jpg) no-repeat';
+      tileB.innerHTML = "";
+
+      cardValues = [];
+      cardIDs = [];
+    }
+
+    function checkMatchingPair() {
+      if(cardValues[0] == cardValues[1]) {
+        tilesFlipped += 2;
+
+        // Clear both arrays
+        cardValues = [];
+        cardIDs = [];
+
+        return true;
+        }
+      }
+
+    function checkClear() {
+      if(tilesFlipped == cardArray.length) {
+        alert("All finished!");
+        document.getElementById('board').innerHTML = "";
+        return true;
+      }
+    }
+
+    newBoard();
+  </script>
+</body>
+</html>
